@@ -42,6 +42,7 @@ function App() {
     qr.make();
 
     document.getElementById('BadgeContainer_placeHolder').innerHTML = badgeDisplay + '<div class="column">' + qr.createImgTag(5) + '</div>';
+    document.getElementById("printButton").style.visibility = "visible"; 
   }
 
   const onCancel = () => {
@@ -50,7 +51,19 @@ function App() {
     });
 
     document.getElementById('BadgeContainer_placeHolder').innerHTML = null;
+    document.getElementById("printButton").style.visibility = "hidden"; 
   }
+
+  const printDiv = () => { 
+    var divContents = document.getElementById("BadgeContainer_placeHolder").innerHTML; 
+    var a = window.open('', '', 'height=500, width=500'); 
+    a.document.write('<html>'); 
+    a.document.write('<body > '); 
+    a.document.write(divContents); 
+    a.document.write('</body></html>'); 
+    a.document.close(); 
+    a.print(); 
+  } 
 
   return (
     <div className="App">
@@ -66,6 +79,7 @@ function App() {
         </form>
       </div>
       <div className="BadgeContainer row" id="BadgeContainer_placeHolder"></div>
+      <button className="button button3" id="printButton" type="button" onClick={printDiv}>Print</button>
     </div>
   );
 }
