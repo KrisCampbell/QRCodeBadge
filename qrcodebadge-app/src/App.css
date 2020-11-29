@@ -1,5 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+}
+
+div.InputField {
+  height: 50%;
 }
 
 div.InputField input {
@@ -11,4 +19,58 @@ div.InputField input {
 
 div.InputField input:focus {
   border: 3px solid #555; 
+}
+
+.BadgeContainer {
+  width: 100%;
+  height: 50%;
+  padding-left: 25%;
+  padding-top: 5%;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #BA5C00;
+}
+
+.button2:hover {
+  background-color: #BA5C00;
+  color: white;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
